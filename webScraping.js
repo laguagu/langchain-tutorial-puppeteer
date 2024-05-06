@@ -1,7 +1,7 @@
-const puppeteer = require('puppeteer');
+import { launch } from 'puppeteer';
 
 async function scrapeProducts(url) {
-    const browser = await puppeteer.launch();
+    const browser = await launch();
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle0' });  // Odottaa, että verkkoaktiviteetti rauhoittuu
 
